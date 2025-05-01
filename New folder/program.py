@@ -34,4 +34,18 @@ while True:
     except ValueError:
         print("Invalid input, please put a number.")
 
-        
+if activity_chosen == 1:
+    activity_fee = 800
+elif activity_chosen == 2:
+    activity_fee = 400
+elif activity_chosen == 3:
+    activity_fee = 900
+
+if activity_chosen == 1:
+    name_of_activity = (f"{camp_activities[0]}")
+elif activity_chosen == 2:
+    name_of_activity = (f"{camp_activities[1]}")
+elif activity_chosen == 3:
+    name_of_activity = (f"{camp_activities[2]}")
+
+meal_options = ["Standard", "Vegetarian", "Vegan"]
