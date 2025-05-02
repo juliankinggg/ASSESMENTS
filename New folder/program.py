@@ -30,7 +30,7 @@ while True:
         if activity_chosen in [1, 2, 3]:
             break
         else:
-            print("Please enter either 1, 2 or 3 and pick an activity.")
+            print(f"Please enter either 1 for {camp_activities[0]}, 2 for {camp_activities[1]}, or 3 for {camp_activities[2]}.")
     except ValueError:
         print("Invalid input, please put a number.")
 
@@ -49,3 +49,38 @@ elif activity_chosen == 3:
     name_of_activity = (f"{camp_activities[2]}")
 
 meal_options = ["Standard", "Vegetarian", "Vegan"]
+
+print("Please pick a meal option from our list:")
+
+print(f"1. {meal_options[0]}")
+print(f"2. {meal_options[1]}")
+print(f"3. {meal_options[2]}")
+
+while True:
+    try:
+        chosen_meal = int(input("Please enter the meal option youd like. Type either 1, 2, or 3: "))
+        if chosen_meal in [1, 2, 3]:
+            break
+        else:
+            print(f"Please enter either 1 for {meal_options[0]}, 2 for {meal_options[1]}, or 3 for {meal_options[2]}")
+    except ValueError:
+        print("Invalid input. Please enter a number.")
+
+
+if chosen_meal == 1:
+    meal_name = (f"{meal_options[0]}")
+elif chosen_meal == 2:
+    meal_name = (f"{meal_options[1]}")
+elif chosen_meal == 3:
+    meal_name = (f"{meal_options[2]}")
+
+
+while True:
+    shuttle_bus = input("Will you be needing a shuttle bus to get there? it will cost $80. Please enter Yes or No: ")
+    shuttle_bus = shuttle_bus.lower()
+    if shuttle_bus == "yes" or shuttle_bus == "no":
+        break
+    else:
+        print("Please enter either Yes if youd like to get on the shuttle bus to get there for $80, or no if you will be driving there yourself.")
+
+print("Picked yes for shuttle bus + $80")
