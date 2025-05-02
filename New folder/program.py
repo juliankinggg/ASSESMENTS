@@ -84,3 +84,4 @@ while True:
         print("Please enter either Yes if youd like to get on the shuttle bus to get there for $80, or no if you will be driving there yourself.")
 
 print("Picked yes for shuttle bus + $80")
+print("Thank you")
