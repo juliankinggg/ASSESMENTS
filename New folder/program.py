@@ -93,9 +93,9 @@ elif shuttle_bus == "no":
 
 print(f"Kiora {first_name}, please check these details are correct.")
 while True:
-    final_question = input(f"13 years old, picked activity - {name_of_activity}, picked meal option - {meal_name}, shuttle bus - {shuttle_bus}. Would you like to confirm this? Yes or No: ")
+    final_question = input(f"13 years old, picked activity - {name_of_activity}, picked meal option - {meal_name}, shuttle bus - {shuttle_bus}.The total cost will be ${bus_fee + activity_fee}. Would you like to confirm this? Yes or No: ")
     final_question = final_question.lower()
-    if final_question == "yes" or shuttle_bus == "no":
+    if final_question == "yes" or final_question == "no":
         break
     else:
         print("Please enter yes to confirm plan or no to cancel.")
