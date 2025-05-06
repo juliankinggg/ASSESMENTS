@@ -92,8 +92,12 @@ while True:
         print("Please enter either Yes if youd like to get on the shuttle bus to get there for $80, or no if you will be driving there yourself.")
 
 #outcome of the question above
-print("Picked yes for shuttle bus + $80")
-print("Thank you")
+if shuttle_bus == "yes":
+    print("Picked yes for shuttle bus + $80")
+    print("Thank you!")
+elif shuttle_bus == "no":
+    print("no shuttle bus!")
+    print("This means you will have to drive there yourself!")
 
 #Sets the price for the shuttle bus
 if shuttle_bus == "yes":
