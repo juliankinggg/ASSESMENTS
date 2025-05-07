@@ -6,16 +6,21 @@ while True:
     else:
         print("Please enter a valid input")
 
+min_age = 5
+max_age = 17
+
 #asks the user for their age 
 while True:
     try:
-        age = int(input("Please enter your age: "))
-        if age > 4 and age < 18 :
+        age = int(input(f"Kiora {first_name}, Please enter your age: "))
+        if age >= min_age and age <= max_age :
             break
         else:
-            print("You must be 5 - 17 Years old to attend")
+            print(f"You must be {min_age} - {max_age} Years old to attend")
     except ValueError:
         print("Please enter a valid input")
+
+print("Thank You!")
 
 #A list for the activities
 camp_activities = ["Cultural Immersion, (5 days, Easy, $800 fee)", "Kayaking and Pancakes, (3 days, Moderate, $400 fee)", "Mountain Biking, (4 days, Difficult, $900 fee)"]
