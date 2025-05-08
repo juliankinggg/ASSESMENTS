@@ -111,17 +111,22 @@ elif shuttle_bus == "no":
     bus_fee = 0
 
 #Final question that infroms the user of their detail and asks if they would like to confirm it.
-print(f"Kiora {first_name}, please check if these details are correct.")
+print(f"Kiora {first_name}, please check if these details are correct:")
+print(f"{age} years old.")
+print(f"Picked avtivity - {name_of_activity}")
+print(f"Picked meal option - {meal_name}")
+print(f"Shuttle bus - {shuttle_bus}")
+print(f"The total cost will be ${bus_fee + activity_fee}.")
 while True:
-    final_question = input(f"13 years old, picked activity - {name_of_activity}, picked meal option - {meal_name}, shuttle bus - {shuttle_bus}.The total cost will be ${bus_fee + activity_fee}. Would you like to confirm this? Yes or No: ")
+    final_question = input("Would you like to confirm this booking? y/yes or n/no: ")
     final_question = final_question.lower()
-    if final_question == "yes" or final_question == "no":
+    if final_question == "yes" or final_question == "no" or final_question == "y" or final_question == "n":
         break
     else:
-        print("Please enter yes to confirm plan or no to cancel.")
+        print("Please enter y/yes to confirm plan or n/no to cancel.")
 
 #final question outcome
-if final_question == "yes":
+if final_question == "yes" or final_question == "y":
     print("Booking confirmed. Thank you for choosing our camp. Enjoy!")
-elif final_question == "no":
+elif final_question == "no" or final_question == "n":
     print("Booking cancelled!")
