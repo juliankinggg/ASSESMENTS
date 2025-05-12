@@ -89,35 +89,32 @@ elif chosen_meal == 3:
 
 #asks the user if they need to go on the shuttle bus or not
 while True:
-    shuttle_bus = input("Will you be needing a shuttle bus to get there? it will cost $80. Please enter Yes or No: ")
+    shuttle_bus = input("Will you be needing a shuttle bus to get there? it will cost $80. Please enter y/yes or n/no: ")
     shuttle_bus = shuttle_bus.lower()
-    if shuttle_bus == "yes" or shuttle_bus == "no":
+    if shuttle_bus == "yes" or shuttle_bus == "no" or shuttle_bus == "y" or shuttle_bus == "n":
         break
     else:
         print("Please enter either Yes if youd like to get on the shuttle bus to get there for $80, or no if you will be driving there yourself.")
 
 #outcome of the question above
-if shuttle_bus == "yes":
+if shuttle_bus == "yes" or shuttle_bus == "y":
     print("Picked yes for shuttle bus + $80")
     print("Thank you!")
-elif shuttle_bus == "no":
+elif shuttle_bus == "no" or shuttle_bus == "n":
     print("no shuttle bus!")
     print("This means you will have to drive there yourself!")
 
 #Sets the price for the shuttle bus
-if shuttle_bus == "yes":
+if shuttle_bus == "yes" or shuttle_bus == "y":
     bus_fee = 80
-elif shuttle_bus == "no":
+    bus_answer = "yes"
+elif shuttle_bus == "no" or shuttle_bus == "n":
     bus_fee = 0
+    bus_answer = "no"
 
 #Final question that infroms the user of their detail and asks if they would like to confirm it.
-camper_details = [f"{camper_age} years old.", f"Picked activitiy - {name_of_activity}.", f"Picked meal option - {meal_name}.", f"Going to shuttle bus? - {shuttle_bus}.", f"The total cost will be ${bus_fee + activity_fee}."]
-print(f"Kiora {first_name}, please check if these details are correct:")
-print(f"{camper_details[0]}")
-print(f"{camper_details[1]}")
-print(f"{camper_details[2]}")
-print(f"{camper_details[3]}")
-print(f"{camper_details[4]}")
+camper_details = [f"{camper_age} years old.", f"Picked activitiy - {name_of_activity}.", f"Picked meal option - {meal_name}.", f"Going to shuttle bus? - {bus_answer}.", f"The total cost will be ${bus_fee + activity_fee}."]
+print(f"Kiora {first_name}, please check if these details are correct: {camper_details[0]} {camper_details[1]} {camper_details[2]} {camper_details[3]} {camper_details[4]}")
 
 while True:
     final_question = input("Would you like to confirm this booking? y/yes or n/no: ")
