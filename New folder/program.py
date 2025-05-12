@@ -12,8 +12,8 @@ max_age = 17
 #asks the user for their age 
 while True:
     try:
-        age = int(input(f"Kiora {first_name}, Please enter your age: "))
-        if age >= min_age and age <= max_age :
+        camper_age = int(input(f"Kiora {first_name}, Please enter your age: "))
+        if camper_age >= min_age and camper_age <= max_age :
             break
         else:
             print(f"You must be {min_age} - {max_age} Years old to attend")
@@ -111,12 +111,14 @@ elif shuttle_bus == "no":
     bus_fee = 0
 
 #Final question that infroms the user of their detail and asks if they would like to confirm it.
+camper_details = [f"{camper_age} years old.", f"Picked activitiy - {name_of_activity}.", f"Picked meal option - {meal_name}.", f"Going to shuttle bus? - {shuttle_bus}.", f"The total cost will be ${bus_fee + activity_fee}."]
 print(f"Kiora {first_name}, please check if these details are correct:")
-print(f"{age} years old.")
-print(f"Picked avtivity - {name_of_activity}")
-print(f"Picked meal option - {meal_name}")
-print(f"Shuttle bus - {shuttle_bus}")
-print(f"The total cost will be ${bus_fee + activity_fee}.")
+print(f"{camper_details[0]}")
+print(f"{camper_details[1]}")
+print(f"{camper_details[2]}")
+print(f"{camper_details[3]}")
+print(f"{camper_details[4]}")
+
 while True:
     final_question = input("Would you like to confirm this booking? y/yes or n/no: ")
     final_question = final_question.lower()
