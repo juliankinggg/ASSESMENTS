@@ -5,9 +5,11 @@ while True:
         break
     else:
         print("Please enter a valid input")
-
+#Constants
 min_age = 5
 max_age = 17
+leadership_age = 15
+shuttle_bus_cost = 80
 
 #asks the user for their age 
 while True:
@@ -20,7 +22,20 @@ while True:
     except ValueError:
         print("Please enter a valid input")
 
-print("Thank You!")
+while True:
+    if camper_age >= leadership_age:
+        leadership_offer = input(f"You have put your age as {camper_age} years old. We offer leadership roles for people {leadership_age} or over. Would you like to be a camp leader? Please enter y/yes or n/no: ")
+        leadership_offer = leadership_offer.lower()
+        if leadership_offer == "yes" or leadership_offer == "no" or leadership_offer == "y" or leadership_offer == "n":
+            break
+        else: 
+            print("Invalid input. Please put either yes or no")
+
+if leadership_offer == "yes" or leadership_offer == "y":
+    print("You have been put as a candidate for camp leader. Thank you for saying yes!")
+elif leadership_offer == "no" or leadership_offer == "n":
+    print("You have said no to being a camp leader.")
+    print("Thank You!")
 
 #A list for the activities
 camp_activities = ["Cultural Immersion, (5 days, Easy, $800 fee)", "Kayaking and Pancakes, (3 days, Moderate, $400 fee)", "Mountain Biking, (4 days, Difficult, $900 fee)"]
@@ -89,16 +104,16 @@ elif chosen_meal == 3:
 
 #asks the user if they need to go on the shuttle bus or not
 while True:
-    shuttle_bus = input("Will you be needing a shuttle bus to get there? it will cost $80. Please enter y/yes or n/no: ")
+    shuttle_bus = input(f"Will you be needing a shuttle bus to get there? it will cost ${shuttle_bus_cost}. Please enter y/yes or n/no: ")
     shuttle_bus = shuttle_bus.lower()
     if shuttle_bus == "yes" or shuttle_bus == "no" or shuttle_bus == "y" or shuttle_bus == "n":
         break
     else:
-        print("Please enter either Yes if youd like to get on the shuttle bus to get there for $80, or no if you will be driving there yourself.")
+        print(f"Please enter either Yes if youd like to get on the shuttle bus to get there for ${shuttle_bus_cost}, or no if you will be driving there yourself.")
 
 #outcome of the question above
 if shuttle_bus == "yes" or shuttle_bus == "y":
-    print("Picked yes for shuttle bus + $80")
+    print(f"Picked yes for shuttle bus + ${shuttle_bus_cost}")
     print("Thank you!")
 elif shuttle_bus == "no" or shuttle_bus == "n":
     print("no shuttle bus!")
@@ -106,7 +121,7 @@ elif shuttle_bus == "no" or shuttle_bus == "n":
 
 #Sets the price for the shuttle bus
 if shuttle_bus == "yes" or shuttle_bus == "y":
-    bus_fee = 80
+    bus_fee = shuttle_bus_cost
     bus_answer = "yes"
 elif shuttle_bus == "no" or shuttle_bus == "n":
     bus_fee = 0
