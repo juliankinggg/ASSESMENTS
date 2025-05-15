@@ -15,27 +15,25 @@ shuttle_bus_cost = 80
 while True:
     try:
         camper_age = int(input(f"Kiora {first_name}, Please enter your age: "))
-        if camper_age >= min_age and camper_age <= max_age :
+        if camper_age >= leadership_age and camper_age <= 17:
+            leadership_offer = input("We offer a leadership role to those 15 years old or over. Would you like to be a candidate to be a camp leader? Please enter y/yer or n/no: ")
+            leadership_offer = leadership_offer.lower()
+            if leadership_offer == "yes" or leadership_offer == "y" or leadership_offer == "no" or leadership_offer == "n":
+                break
+            else:
+                print("Invalid input. You must enter either y/yes or n/no")
+        elif camper_age >= min_age and camper_age <= 14 :
+            leadership_offer = "no"
             break
         else:
             print(f"You must be {min_age} - {max_age} Years old to attend")
     except ValueError:
-        print("Please enter a valid input")
-
-while True:
-    if camper_age >= leadership_age:
-        leadership_offer = input(f"You have put your age as {camper_age} years old. We offer leadership roles for people {leadership_age} or over. Would you like to be a camp leader? Please enter y/yes or n/no: ")
-        leadership_offer = leadership_offer.lower()
-        if leadership_offer == "yes" or leadership_offer == "no" or leadership_offer == "y" or leadership_offer == "n":
-            break
-        else: 
-            print("Invalid input. Please put either yes or no")
+        print("Please enter a valid input")  
 
 if leadership_offer == "yes" or leadership_offer == "y":
-    print("You have been put as a candidate for camp leader. Thank you for saying yes!")
+    leadership_answer = "YES"
 elif leadership_offer == "no" or leadership_offer == "n":
-    print("You have said no to being a camp leader.")
-    print("Thank You!")
+    leadership_answer = "NO"
 
 #A list for the activities
 camp_activities = ["Cultural Immersion, (5 days, Easy, $800 fee)", "Kayaking and Pancakes, (3 days, Moderate, $400 fee)", "Mountain Biking, (4 days, Difficult, $900 fee)"]
@@ -128,8 +126,9 @@ elif shuttle_bus == "no" or shuttle_bus == "n":
     bus_answer = "no"
 
 #Final question that infroms the user of their detail and asks if they would like to confirm it.
-camper_details = [f"{camper_age} years old.", f"Picked activitiy - {name_of_activity}.", f"Picked meal option - {meal_name}.", f"Going to shuttle bus? - {bus_answer}.", f"The total cost will be ${bus_fee + activity_fee}."]
-print(f"Kiora {first_name}, please check if these details are correct: {camper_details[0]} {camper_details[1]} {camper_details[2]} {camper_details[3]} {camper_details[4]}")
+camper_details = [f"{camper_age} years old.", f"Picked activitiy - {name_of_activity}.", f"Picked meal option - {meal_name}.", f"Going to shuttle bus? - {bus_answer}.", f"The total cost will be ${bus_fee + activity_fee}.", f"Camp leadership - {leadership_answer}."]
+print(f"Kiora {first_name}, please check if these details are correct: {camper_details[0]} {camper_details[1]} {camper_details[2]} {camper_details[3]} {camper_details[4]} {camper_details[5]}")
+
 
 while True:
     final_question = input("Would you like to confirm this booking? y/yes or n/no: ")
