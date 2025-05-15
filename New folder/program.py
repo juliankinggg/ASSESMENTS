@@ -1,7 +1,7 @@
 #asks user for first name
 while True:
     first_name = input("Please enter your first name: ")
-    if len(first_name) > 0:
+    if len(first_name) > 0 and not first_name.isdigit():
         break
     else:
         print("Please enter a valid input")
