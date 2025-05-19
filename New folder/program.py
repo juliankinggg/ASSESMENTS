@@ -26,14 +26,17 @@ while True:
             leadership_offer = "no"
             break
         else:
-            print(f"You must be {min_age} - {max_age} Years old to attend")
+            print(f"Sorry but you must be {min_age} - {max_age} Years old to attend.")
+            exit()
     except ValueError:
         print("Please enter a valid input")  
 
 if leadership_offer == "yes" or leadership_offer == "y":
     leadership_answer = "YES"
+    print("Thank you for volunteering to be camp leader! You have been put as a candidate.")
 elif leadership_offer == "no" or leadership_offer == "n":
     leadership_answer = "NO"
+    print("Thank you!")
 
 #A list for the activities
 camp_activities = ["Cultural Immersion, (5 days, Easy, $800 fee)", "Kayaking and Pancakes, (3 days, Moderate, $400 fee)", "Mountain Biking, (4 days, Difficult, $900 fee)"]
@@ -143,3 +146,4 @@ if final_question == "yes" or final_question == "y":
     print("Booking confirmed. Thank you for choosing our camp. Enjoy!")
 elif final_question == "no" or final_question == "n":
     print("Booking cancelled!")
+    exit()
